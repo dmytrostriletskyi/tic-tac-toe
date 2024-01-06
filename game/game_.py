@@ -25,7 +25,7 @@ class Game:
     POSITION_IS_VALID = False
     SYSTEM_EXIT_STATUS = 1
 
-    def __init__(self):
+    def __init__(self) -> None:
         """
         Construct the object.
         """
@@ -35,7 +35,7 @@ class Game:
         self.board = Board(players=[self.player_x, self.player_y])
         self.ui = Ui(board=self.board)
 
-    def start(self):
+    def start(self) -> None:
         """
         Start a game.
         """

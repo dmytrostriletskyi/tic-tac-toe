@@ -1,0 +1,37 @@
+[tool.ruff]
+target-version = "py311"
+src = ["src"]
+select = ["ALL"]
+line-length = 120
+ignore = [
+    "A002",
+    "ANN101",
+    "D",
+    "EM101",
+    "I",
+    "PTH123",
+    "TRY003",
+    "RET504",
+    "S113",
+    "S311",
+    "UP007",
+    "C901",
+    "PTH109",
+    "PERF401",
+    "N818",
+    "T201",
+    "RUF012",
+]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = [
+    "D104",
+    "F401",
+]
+"schema.py" = [
+    "A003",
+]
+
+[tool.ruff.flake8-quotes]
+docstring-quotes = "double"
+inline-quotes = "single"

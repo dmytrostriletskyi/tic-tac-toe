@@ -11,11 +11,11 @@ class Ui:
     """
 
     TITLE = """
-     _____ _         _____             _____          
-    |_   _(_) ___   |_   _|_ _  ___   |_   _|__   ___ 
-      | | | |/ __|____| |/ _` |/ __|____| |/ _ \ / _ \\
+     _____ _         _____             _____
+    |_   _(_) ___   |_   _|_ _  ___   |_   _|__   ___
+      | | | |/ __|____| |/ _` |/ __|____| |/ _ \\ / _ \\
       | | | | (_|_____| | (_| | (_|_____| | (_) |  __/
-      |_| |_|\___|    |_|\__,_|\___|    |_|\___/ \___|
+      |_| |_|\\___|    |_|\\__,_|\\___|    |_|\\___/ \\___|
     """
 
     BREAK = '————————————————————————————————————————————————————————————————'
@@ -64,7 +64,7 @@ class Ui:
         9: '⁹',
     }
 
-    def __init__(self, board: Board):
+    def __init__(self, board: Board) -> None:
         """
         Construct the object.
 
@@ -143,10 +143,10 @@ class Ui:
         """
         Show position is invalid message.
         """
-        print(f'Position the player enters is not valid. It should be one of the numbers you see on the board.')
+        print('Position the player enters is not valid. It should be one of the numbers you see on the board.')
         self.show_empty_line()
 
-    def _colorize_placeholder(self, placeholder) -> str:
+    def _colorize_placeholder(self, placeholder: str) -> str:
         """
         Colorize a placeholder.
 
@@ -158,4 +158,4 @@ class Ui:
         Returns:
             The colorized placeholder as a string.
         """
-        return '\033[90m' + f'{placeholder}' + '\033[0m'
+        return f'\033[90m{placeholder}\033[0m'

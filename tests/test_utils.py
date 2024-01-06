@@ -11,7 +11,7 @@ from game.utils import (
 
 
 @pytest.mark.parametrize(
-    'list_, chunks, expected_sublists',
+    ('list_', 'chunks', 'expected_sublists'),
     [
         (
             [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
@@ -31,7 +31,7 @@ from game.utils import (
                 [4, 5, 6],
                 [7, 8, 9],
             ],
-        )
+        ),
     ],
 )
 def test_get_horizontal_sublists(list_, chunks, expected_sublists):
@@ -44,7 +44,7 @@ def test_get_horizontal_sublists(list_, chunks, expected_sublists):
 
 
 @pytest.mark.parametrize(
-    'list_, chunks, expected_sublists',
+    ('list_', 'chunks', 'expected_sublists'),
     [
         (
             [1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -78,7 +78,7 @@ def test_get_vertical_sublists(list_, chunks, expected_sublists):
 
 
 @pytest.mark.parametrize(
-    'list_, expected_sublists',
+    ('list_', 'expected_sublists'),
     [
         (
             [1, 2, 3, 4, 5, 6, 7, 8, 9],

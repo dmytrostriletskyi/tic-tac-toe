@@ -1,9 +1,8 @@
 """
 Provide implementation of the game's dataclasses.
 """
-from typing import Optional
-
 from dataclasses import dataclass
+from typing import Optional
 
 from game.enums import (
     BoardCheckResultDecision,
@@ -19,9 +18,12 @@ class Player:
 
     mark: PlayerMark
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
         Get printable representational string of the player object.
+
+        Returns:
+            A  printable representational of the player object as a string.
         """
         return f'Player(mark={self.mark})'
 
@@ -35,7 +37,7 @@ class BoardState:
     decision: BoardCheckResultDecision
     winning_player: Optional[Player] = None
 
-    def __eq__(self, other: 'BoardState'):
+    def __eq__(self, other: 'BoardState') -> bool:
         """
         Perform comparison to the same type of other object.
 

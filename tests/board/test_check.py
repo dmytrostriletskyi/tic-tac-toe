@@ -4,13 +4,13 @@ Provide tests for the game board's checking.
 import pytest
 
 from game.board import Board
-from game.enums import (
-    BoardCheckResultDecision,
-    PlayerMark,
-)
 from game.dto import (
     BoardState,
     Player,
+)
+from game.enums import (
+    BoardCheckResultDecision,
+    PlayerMark,
 )
 
 

@@ -14,7 +14,7 @@ from game.exceptions import (
 
 
 @pytest.mark.parametrize(
-    'position, expected_board',
+    ('position', 'expected_board'),
     [
         (
             1,
@@ -120,7 +120,7 @@ def test_board_mark_player_does_not_exist():
 
 
 @pytest.mark.parametrize(
-    'board_size, non_existing_position',
+    ('board_size', 'non_existing_position'),
     [
         (3, 0),
         (3, 10),

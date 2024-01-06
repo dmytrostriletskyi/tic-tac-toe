@@ -14,6 +14,10 @@ def get_horizontal_sublists(list_: list, chunks: int) -> list[list]:
     Is used to understand if any of game's players have only their marks in one of the sublists, thus won
     «horizontally».
 
+    Arguments:
+        list_ (list): a list.
+        chunks (int): number of elements for sublists.
+
     Returns:
         A «horizontally» partitioned list by chunks as list of lists.
     """
@@ -35,6 +39,10 @@ def get_vertical_sublists(list_: list, chunks: int) -> list[list]:
     with each sublist containing elements from the same position across multiple sublists. Is used to understand if
     any of game's players have only their marks in one of the sublists, thus won «vertically».
 
+    Arguments:
+        list_ (list): a list.
+        chunks (int): number of elements for sublists.
+
     Returns:
         A «vertically» partitioned list by chunks as list of lists.
     """
@@ -54,8 +62,11 @@ def get_diagonal_sublists(list_: list) -> list[list]:
     It «diagonally» partitions a given list into sublists: the first sublist represents the elements along the main
     diagonal, and the second sublist represents the elements along the secondary diagonal of the square matrix.
 
+    Arguments:
+        list_ (list): a list.
+
     Raises:
-        ListIsNotPerfectSquare: if the list, representing a matrix, is not a perfect square.
+        ListIsNotPerfectSquareException: if the list, representing a matrix, is not a perfect square.
 
     Returns:
         A «diagonally» partitioned list.
@@ -93,13 +104,16 @@ def is_list_has_equal_elements(list_: list) -> bool:
     Is used to understand if any of game's players have only their marks in one of the sublists, thus won
     «horizontally», «vertically» or «diagonally».
 
-    Return:
+    Arguments:
+        list_ (list): a list.
+
+    Returns:
         True, if elements of a list are equal.
         Otherwise, False.
     """
     unique_elements = set(list_)
 
-    if len(unique_elements) >= 2:
+    if len(unique_elements) >= 2:  # ruff: noqa: PLR2004
         return False
 
     return True

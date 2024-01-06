@@ -24,4 +24,4 @@ class PlayerMark(Enum):
     CLASSIC_X = 'x'
     CLASSIC_Y = 'o'
     MODERN_X = '✘'
-    MODERN_Y = '𝐎'
+    MODERN_Y = '𝐎'  # ruff: noqa: RUF001

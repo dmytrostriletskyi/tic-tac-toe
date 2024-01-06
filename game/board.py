@@ -35,6 +35,9 @@ class Board:
         Arguments:
             players (list): a list of players as list of `Player`.
             size (int): a size of a board as integer, means number of position per side in a perfect square.
+
+        Raises:
+            BoardPlayersMarksDuplicateException: if board players' marks duplicate.
         """
         self.players = players
         self.players_number = len(players)
@@ -50,6 +53,9 @@ class Board:
     def get(self) -> list:
         """
         Get a board.
+
+        Returns:
+            A board as a list of `None` or marks.
         """
         return self.board
 
@@ -63,6 +69,11 @@ class Board:
         Arguments:
             player (Player): a player as a `Player`.
             position (int): position on a board.
+
+        Raises:
+            BoardPlayerDoesNotExistException: if board's player does not exist.
+            BoardPositionDoesNotExistException: if board's position does not exist.
+            BoardPositionAlreadyTakenException: if board's position already taken.
         """
         if player not in self.players:
             raise BoardPlayerDoesNotExistException
@@ -126,10 +137,15 @@ class Board:
         for player in self.players:
             if player.mark in marks:
                 return player
+        return None
 
     def _are_players_marks_unique(self) -> bool:
         """
         Check if players' marks are unique.
+
+        Returns:
+            True if all players' marks are unique.
+            Otherwise, False.
         """
         players_marks = []
 
